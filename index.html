@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKAG & Associates | Chartered Accountants & Startup Advisory</title>
+    <meta name="description"
+        content="Expert CA support, Startup registration, Audit, ISO, and Trademark services. Grow with financial clarity and compliance confidence.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            950: '#0a0a0a',
+                            900: '#171717',
+                            800: '#262626',
+                            accent: '#3b82f6',
+                            glow: '#60a5fa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+
+        .border-grey {
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-shadow:hover {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+            border-color: #3b82f6;
+        }
+
+        .process-line::before {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: 2rem;
+            right: 2rem;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-line::before {
+                display: none;
+            }
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .google-badge {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 99px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-image-backdrop {
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-700 bg-white selection:bg-brand-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full top-0 z-[100] py-4 px-4 sm:px-6 transition-all duration-300 border-b border-slate-100 glass-nav">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-950 rounded flex items-center justify-center text-white">
+                    <i class="ph-fill ph-chart-polar text-xl"></i>
+                </div>
+                <span class="font-heading font-black text-lg text-brand-950 tracking-tight">SKAG <span
+                        class="text-brand-accent">&</span> ASSOCIATES</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about"
+                    class="text-xs font-bold text-slate-500 hover:text-brand-950 uppercase tracking-widest">About</a>
+                <a href="#services"
+                    class="text-xs font-bold text-slate-500 hover:text-brand-950 uppercase tracking-widest">Services</a>
+                <a href="#process"
+                    class="text-xs font-bold text-slate-500 hover:text-brand-950 uppercase tracking-widest">Workflow</a>
+                <a href="#blog"
+                    class="text-xs font-bold text-slate-500 hover:text-brand-950 uppercase tracking-widest">Blog</a>
+                <a href="#contact"
+                    class="bg-brand-950 text-white px-5 py-2 rounded-lg text-xs font-bold hover:bg-brand-accent transition-all">
+                    Consultation
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-brand-950">
+                <i class="ph-bold ph-list text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 bg-slate-50 overflow-hidden font-sans">
+        <div
+            class="absolute inset-0 pointer-events-none bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60">
+        </div>
+
+        <div
+            class="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                <div class="lg:col-span-6 lg:pr-8 z-10">
+
+                    <div
+                        class="hero-anim inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-slate-200/60 shadow-sm mb-8">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        <div class="flex gap-0.5 text-amber-400 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-700 tracking-wide">4.9/5 <span
+                                class="hidden sm:inline font-medium text-slate-500">(500+ Reviews)</span></span>
+                    </div>
+
+                    <h1
+                        class="hero-anim text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-brand-950 leading-[1.05] tracking-tight mb-6">
+                        Grow Your <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-600">Business</span><br />
+                        with Financial Clarity.
+                    </h1>
+
+                    <p class="hero-anim text-lg md:text-xl text-slate-500 mb-10 leading-relaxed max-w-lg font-light">
+                        From startup registration to audits and certifications, we handle the compliance so you can
+                        focus entirely on scaling your vision.
+                    </p>
+
+                    <div class="hero-anim flex flex-col sm:flex-row items-center gap-4">
+                        <a href="#contact"
+                            class="w-full sm:w-auto bg-brand-950 text-white px-8 py-4 rounded-2xl font-semibold text-base hover:bg-brand-800 hover:shadow-xl hover:shadow-brand-950/20 transition-all active:scale-[0.98] flex justify-center items-center gap-2 group">
+                            Get Free Consultation
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#services"
+                            class="w-full sm:w-auto bg-white text-brand-950 border border-slate-200 px-8 py-4 rounded-2xl font-semibold text-base hover:bg-slate-50 hover:border-slate-300 transition-all active:scale-[0.98] flex justify-center items-center">
+                            Explore Services
+                        </a>
+                    </div>
+
+                    <div class="hero-anim mt-8 flex items-center gap-3 text-sm font-medium text-slate-500">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-50"
+                                src="https://i.pravatar.cc/100?img=1" alt="Avatar">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-50"
+                                src="https://i.pravatar.cc/100?img=2" alt="Avatar">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-50"
+                                src="https://i.pravatar.cc/100?img=3" alt="Avatar">
+                        </div>
+                        <p>Trusted by <strong class="text-brand-950">2,000+</strong> founders.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative mt-12 lg:mt-0">
+
+                    <div
+                        class="hero-image-anim relative rounded-[2rem] overflow-hidden shadow-2xl border bg-white border-slate-100 z-10 lg:ml-12 aspect-[4/3] sm:aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200"
+                            alt="Professional Consultation"
+                            class="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-700 ease-out">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-brand-950/40 via-transparent to-transparent">
+                        </div>
+                    </div>
+
+                    <div
+                        class="hero-card-anim absolute -left-4 sm:-left-12 top-10 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white z-20 flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 shrink-0">
+                            <i class="ph-fill ph-shield-check text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-brand-950 leading-none mb-1">100%</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Audit Ready</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="hero-card-anim absolute -right-4 sm:-right-8 -bottom-8 bg-brand-950 p-6 rounded-2xl shadow-2xl border border-brand-800 z-20">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="flex h-3 w-3 relative">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-accent"></span>
+                            </div>
+                            <span class="text-xs font-medium text-brand-accent uppercase tracking-widest">Fast
+                                Execution</span>
+                        </div>
+                        <div class="text-white font-medium text-sm leading-snug">
+                            Company registration <br /> in under <span class="text-white font-black text-lg">7
+                                Days.</span>
+                        </div>
+                    </div>
+
+                    <svg class="absolute -bottom-10 -left-10 w-40 h-40 text-slate-200 z-0 hidden md:block"
+                        fill="currentColor" viewBox="0 0 100 100">
+                        <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <circle cx="2" cy="2" r="2"></circle>
+                        </pattern>
+                        <rect x="0" y="0" width="100" height="100" fill="url(#dots)"></rect>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="mt-24 pt-12 border-t border-slate-200/60 hero-anim">
+                <p class="text-center text-[10px] uppercase font-black tracking-[0.2em] text-slate-400 mb-8">Accredited
+                    & Recognized By</p>
+                <div
+                    class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Startup_India_Logo.png"
+                        class="h-8 object-contain" alt="Startup India">
+                    <div class="flex items-center font-black text-xl text-slate-900 leading-none">ISO 9001:2015</div>
+                    <div class="flex items-center font-black text-lg text-slate-900 leading-none">Income Tax Dept</div>
+                    <div class="flex items-center font-black text-lg text-slate-900 leading-none">GST Council</div>
+                    <div class="flex items-center font-black text-lg text-slate-900 leading-none">MSME Reg.</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Make sure GSAP is loaded before running this
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+                // Animate Left Column Text
+                tl.fromTo(".hero-anim",
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 }
+                )
+                    // Animate Main Image
+                    .fromTo(".hero-image-anim",
+                        { scale: 0.95, opacity: 0, rotation: 1 },
+                        { scale: 1, opacity: 1, rotation: 0, duration: 1 },
+                        "-=0.6"
+                    )
+                    // Animate Floating Cards
+                    .fromTo(".hero-card-anim",
+                        { y: 20, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.6, stagger: 0.2 },
+                        "-=0.4"
+                    );
+            }
+        });
+    </script>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-20 text-center reveal-up">
+                <span class="text-brand-accent font-black text-xs uppercase tracking-[0.3em] mb-4 block">Our
+                    Solutions</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-950">Expert Financial Advisory</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card -->
+                <div class="p-10 border-grey rounded-3xl bg-slate-50 card-shadow transition-all group reveal-up">
+                    <div
+                        class="w-14 h-14 bg-brand-950 text-white rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-accent transition-colors">
+                        <i class="ph-fill ph-calculator text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-950 mb-4">Chartered Accountant</h3>
+                    <ul class="space-y-3 mb-8 text-slate-500 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Income
+                            Tax Filing (ITR)</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> GST
+                            Registration & Filing</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> TDS
+                            Compliance</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-brand-accent"></i> Financial
+                            Statements</li>
+                    </ul>
+                    <a href="#"
+                        class="text-brand-accent font-bold text-xs uppercase tracking-widest flex items-center gap-2">More
+                        Details <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Service Card -->
+                <div class="p-10 border-grey rounded-3xl bg-white card-shadow transition-all group reveal-up"
+                    style="transition-delay: 100ms">
+                    <div
+                        class="w-14 h-14 bg-blue-50 text-brand-accent rounded-2xl flex items-center justify-center mb-8 group-hover:text-white group-hover:bg-brand-accent">
+                        <i class="ph-fill ph-rocket-launch text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-950 mb-4">Startup Advisory</h3>
+                    <ul class="space-y-3 mb-8 text-slate-500 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Company
+                            Registration</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Startup
+                            India Reg.</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Business
+                            Structuring</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-brand-accent"></i> Funding
+                            Projections</li>
+                    </ul>
+                    <a href="#"
+                        class="text-brand-accent font-bold text-xs uppercase tracking-widest flex items-center gap-2">More
+                        Details <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Service Card -->
+                <div class="p-10 border-grey rounded-3xl bg-slate-50 card-shadow transition-all group reveal-up"
+                    style="transition-delay: 200ms">
+                    <div
+                        class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:text-white group-hover:bg-emerald-600">
+                        <i class="ph-fill ph-magnifying-glass text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-950 mb-4">Audit & Assurance</h3>
+                    <ul class="space-y-3 mb-8 text-slate-500 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Statutory
+                            Audit</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Internal
+                            & Tax Audit</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i>
+                            Compliance Audit</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-brand-accent"></i> Risk
+                            Assessment</li>
+                    </ul>
+                    <a href="#"
+                        class="text-brand-accent font-bold text-xs uppercase tracking-widest flex items-center gap-2">More
+                        Details <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Service Card -->
+                <div class="p-10 border-grey rounded-3xl bg-white card-shadow transition-all group reveal-up">
+                    <div
+                        class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:text-white group-hover:bg-purple-600">
+                        <i class="ph-fill ph-certificate text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-950 mb-4">ISO Certification</h3>
+                    <ul class="space-y-3 mb-8 text-slate-500 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> ISO 9001
+                            & 14001</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i>
+                            Documentation Support</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Audit
+                            Preparation</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-brand-accent"></i>
+                            Certification Audit</li>
+                    </ul>
+                    <a href="#"
+                        class="text-brand-accent font-bold text-xs uppercase tracking-widest flex items-center gap-2">More
+                        Details <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Service Card -->
+                <div class="p-10 border-grey rounded-3xl bg-slate-50 card-shadow transition-all group reveal-up"
+                    style="transition-delay: 100ms">
+                    <div
+                        class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8 group-hover:text-white group-hover:bg-orange-600">
+                        <i class="ph-fill ph-trademark text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-brand-950 mb-4">Trademark & Legal</h3>
+                    <ul class="space-y-3 mb-8 text-slate-500 text-sm font-medium">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Trademark
+                            Registration</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Brand
+                            Protection</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-brand-accent"></i> Objection
+                            Handling</li>
+                        <li class="flex items-center gap-3"><i class="ph-bold ph-check text-brand-accent"></i> Copyright
+                            & IP Support</li>
+                    </ul>
+                    <a href="#"
+                        class="text-brand-accent font-bold text-xs uppercase tracking-widest flex items-center gap-2">More
+                        Details <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Customized CTA -->
+                <div class="p-10 border-grey bg-brand-950 rounded-3xl flex flex-col justify-center items-center text-center reveal-up"
+                    style="transition-delay: 200ms">
+                    <h3 class="text-xl font-heading font-bold text-white mb-6">Looking for a <br />Custom Solution?</h3>
+                    <a href="#contact"
+                        class="bg-white text-brand-950 px-8 py-3 rounded-xl font-bold text-sm hover:bg-slate-100 transition-all">Talk
+                        to our Experts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-24 text-center reveal-up">
+                <span class="text-brand-accent font-black text-xs uppercase tracking-[0.3em] mb-4 block">Workflow</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-950">Simple Execution Path</h2>
+            </div>
+
+            <div class="relative grid grid-cols-1 md:grid-cols-4 gap-12 process-line">
+                <div class="relative flex flex-col items-center text-center reveal-up">
+                    <div
+                        class="w-16 h-16 bg-white border-grey rounded-full flex items-center justify-center text-xl font-black text-brand-950 mb-8 relative z-10 shadow-sm">
+                        01
+                    </div>
+                    <h4 class="text-lg font-bold text-brand-950 mb-3">Consultation</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium">Initial meeting to understand your
+                        goals and specific requirements deep-down.</p>
+                </div>
+                <div class="relative flex flex-col items-center text-center reveal-up" style="transition-delay: 100ms">
+                    <div
+                        class="w-16 h-16 bg-white border-grey rounded-full flex items-center justify-center text-xl font-black text-brand-950 mb-8 relative z-10 shadow-sm">
+                        02
+                    </div>
+                    <h4 class="text-lg font-bold text-brand-950 mb-3">Strategy</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium">Defining the most tax-efficient and
+                        legally sound structure for your firm.</p>
+                </div>
+                <div class="relative flex flex-col items-center text-center reveal-up" style="transition-delay: 200ms">
+                    <div
+                        class="w-16 h-16 bg-brand-950 rounded-full flex items-center justify-center text-xl font-black text-white mb-8 relative z-10 shadow-xl shadow-brand-950/20">
+                        03
+                    </div>
+                    <h4 class="text-lg font-bold text-brand-950 mb-3">Execution</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium">Fast and accurate processing of
+                        registrations, filings, and audits by experts.</p>
+                </div>
+                <div class="relative flex flex-col items-center text-center reveal-up" style="transition-delay: 300ms">
+                    <div
+                        class="w-16 h-16 bg-white border-grey rounded-full flex items-center justify-center text-xl font-black text-brand-950 mb-8 relative z-10 shadow-sm">
+                        04
+                    </div>
+                    <h4 class="text-lg font-bold text-brand-950 mb-3">Advisory</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed font-medium">Ongoing compliance support and
+                        strategic financial advice to help you scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-16 items-start">
+                <div class="reveal-up">
+                    <span
+                        class="text-brand-accent font-black text-xs uppercase tracking-[0.3em] mb-4 block">Testimonials</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-950 mb-8">What Our Clients Say.
+                    </h2>
+                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        <div class="text-slate-900">
+                            <div class="flex gap-1 text-amber-400 text-sm">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i>
+                            </div>
+                            <div class="text-[10px] font-black uppercase tracking-widest mt-1">Highly Rated on Google
+                                Business</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                    <div class="p-8 border-grey rounded-3xl reveal-up">
+                        <div class="flex text-amber-400 mb-6 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-8 font-medium leading-relaxed italic">"The audit process was
+                            seamless. They found optimizations we missed. Highly recommended for any SMB."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop"
+                                class="w-10 h-10 rounded-full grayscale border border-slate-200">
+                            <div>
+                                <div class="font-bold text-brand-950 text-sm leading-tight">Aman Gupta</div>
+                                <div class="text-[9px] font-black uppercase tracking-widest text-slate-400">Founder,
+                                    CloudNext</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 border-grey rounded-3xl reveal-up" style="transition-delay: 100ms">
+                        <div class="flex text-amber-400 mb-6 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-8 font-medium leading-relaxed italic">"Handling GST and ITR became
+                            stress-free once I partnered with SKAG. Their advisory saved us a significant amount."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                                class="w-10 h-10 rounded-full grayscale border border-slate-200">
+                            <div>
+                                <div class="font-bold text-brand-950 text-sm leading-tight">Sarah Khan</div>
+                                <div class="text-[9px] font-black uppercase tracking-widest text-slate-400">CEO, Bloom
+                                    Designs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 border-grey rounded-3xl reveal-up">
+                        <div class="flex text-amber-400 mb-6 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-8 font-medium leading-relaxed italic">"Incredible turnaround on ISO
+                            certification. Truly professional team that knows their stuff."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                class="w-10 h-10 rounded-full grayscale border border-slate-200">
+                            <div>
+                                <div class="font-bold text-brand-950 text-sm leading-tight">Rajesh Mehta</div>
+                                <div class="text-[9px] font-black uppercase tracking-widest text-slate-400">Director,
+                                    TechNova</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 border-grey rounded-3xl reveal-up" style="transition-delay: 100ms">
+                        <div class="flex text-amber-400 mb-6 text-sm">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-8 font-medium leading-relaxed italic">"They handled our company
+                            registration from A to Z. Flawless execution and constant support."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                class="w-10 h-10 rounded-full grayscale border border-slate-200">
+                            <div>
+                                <div class="font-bold text-brand-950 text-sm leading-tight">Vikas Jain</div>
+                                <div class="text-[9px] font-black uppercase tracking-widest text-slate-400">Founder,
+                                    GreenEdge</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-16 reveal-up">
+                <div>
+                    <span class="text-brand-accent font-black text-xs uppercase tracking-[0.3em] mb-4 block">Knowledge
+                        Hub</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-black text-brand-950">Expert Insights</h2>
+                </div>
+                <a href="#"
+                    class="hidden md:flex items-center gap-3 font-bold text-brand-950 hover:text-brand-accent transition-colors">
+                    All Articles <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="group reveal-up">
+                    <div class="aspect-[16/10] bg-white border-grey rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+                            class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-brand-950 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Compliance</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div
+                            class="flex items-center gap-4 text-[10px] uppercase font-black tracking-widest text-slate-400 mb-4">
+                            <span>April 10, 2026</span>
+                            <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h4
+                            class="text-xl font-heading font-black text-brand-950 mb-4 leading-tight group-hover:text-brand-accent transition-colors">
+                            Tax Saving Strategies for Startups 2026</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6 font-medium">Navigating the complex
+                            landscape of corporate tax doesn't have to be daunting...</p>
+                        <a href="#"
+                            class="text-[10px] font-black uppercase tracking-widest text-brand-950 flex items-center gap-2 group-hover:gap-4 transition-all uppercase">Read
+                            More <i class="ph-bold ph-arrow-right text-brand-accent"></i></a>
+                    </div>
+                </article>
+
+                <article class="group reveal-up" style="transition-delay: 100ms">
+                    <div class="aspect-[16/10] bg-white border-grey rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                            class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-brand-accent text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Strategy</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div
+                            class="flex items-center gap-4 text-[10px] uppercase font-black tracking-widest text-slate-400 mb-4">
+                            <span>April 08, 2026</span>
+                            <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h4
+                            class="text-xl font-heading font-black text-brand-950 mb-4 leading-tight group-hover:text-brand-accent transition-colors">
+                            Strategic Benefits of ISO Certification</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6 font-medium">Learn how ISO certification
+                            transforms your business perception and trust...</p>
+                        <a href="#"
+                            class="text-[10px] font-black uppercase tracking-widest text-brand-950 flex items-center gap-2 group-hover:gap-4 transition-all uppercase">Read
+                            More <i class="ph-bold ph-arrow-right text-brand-accent"></i></a>
+                    </div>
+                </article>
+
+                <article class="group reveal-up" style="transition-delay: 200ms">
+                    <div class="aspect-[16/10] bg-white border-grey rounded-[2rem] overflow-hidden mb-8 relative">
+                        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80"
+                            class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105">
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-emerald-600 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Audit</span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div
+                            class="flex items-center gap-4 text-[10px] uppercase font-black tracking-widest text-slate-400 mb-4">
+                            <span>April 05, 2026</span>
+                            <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
+                            <span>By Admin</span>
+                        </div>
+                        <h4
+                            class="text-xl font-heading font-black text-brand-950 mb-4 leading-tight group-hover:text-brand-accent transition-colors">
+                            Internal Audit Preparation Checklist</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6 font-medium">Ensure your records are
+                            flawless with our stage-by-stage audit check...</p>
+                        <a href="#"
+                            class="text-[10px] font-black uppercase tracking-widest text-brand-950 flex items-center gap-2 group-hover:gap-4 transition-all uppercase">Read
+                            More <i class="ph-bold ph-arrow-right text-brand-accent"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 pt-32 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="col-span-1">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-8 h-8 bg-brand-950 rounded flex items-center justify-center text-white">
+                            <i class="ph-fill ph-chart-polar text-xl"></i>
+                        </div>
+                        <span class="font-heading font-black text-lg text-brand-950 tracking-tight">SKAG <span
+                                class="text-brand-accent">&</span> ASSOCIATES</span>
+                    </div>
+                    <p class="text-slate-500 mb-8 text-xs font-medium leading-relaxed max-w-xs">Your Partner in Finance,
+                        Compliance, and Growth since 2014.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.2em] text-brand-950 mb-8">Services</h5>
+                    <ul class="space-y-4 text-[10px] font-black uppercase tracking-[0.1em] text-slate-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Income Tax</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Audit Service</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">GST Compliance</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.2em] text-brand-950 mb-8">Support</h5>
+                    <ul class="space-y-4 text-[10px] font-black uppercase tracking-[0.1em] text-slate-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Consultation</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Latest Blog</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.2em] text-brand-950 mb-8">Newsletter</h5>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your Email"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 text-xs focus:ring-1 focus:ring-brand-accent outline-none">
+                        <button
+                            class="w-full bg-brand-950 text-white rounded-lg py-2.5 text-[10px] font-black uppercase tracking-widest hover:bg-brand-accent transition-all">Join
+                            Now</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-400 text-[9px] font-black uppercase tracking-[0.2em]">© 2026 SKAG & ASSOCIATES. All
+                    Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-brand-950 z-[120] hidden flex-col items-center justify-center p-8 text-white transition-opacity duration-300">
+        <button id="mobile-menu-close" class="absolute top-10 right-10 text-white"><i
+                class="ph-bold ph-x text-3xl"></i></button>
+        <div class="flex flex-col items-center gap-8 text-3xl font-heading font-black">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#process" class="mobile-link">Workflow</a>
+            <a href="#blog" class="mobile-link">Blog</a>
+            <a href="#contact" class="mobile-link text-brand-accent">Consultation</a>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Reveal
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const close = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        btn.onclick = toggleMenu;
+        close.onclick = toggleMenu;
+        links.forEach(l => l.onclick = toggleMenu);
+
+        // Navbar Scroll
+        window.onscroll = function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        };
+    </script>
+</body>
+
+</html>
