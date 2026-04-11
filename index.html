@@ -463,6 +463,39 @@
             letter-spacing: 0.1em;
         }
 
+        .timeline-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 50px;
+        }
+
+        .timeline-icon {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .timeline-amount {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.01em;
+            margin-top: 2px;
+        }
+
+        .timeline-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
         /* ── DIVIDER ── */
         .divider {
             border: none;
@@ -945,7 +978,7 @@
         <div class="cover">
             <div class="cover-pattern"></div>
             <div class="cover-brand">
-               
+
                 <div class="brand-name">WebResolv<span>.</span></div>
             </div>
             <div class="cover-body">
@@ -1027,22 +1060,26 @@
                 <div class="card">
                     <div class="card-icon">🏗️</div>
                     <h4>1. Create 71 Missing Pages</h4>
-                    <p>First, we build the 71 missing service pages so every service you actually offer is visible on your website.</p>
+                    <p>First, we build the 71 missing service pages so every service you actually offer is visible on
+                        your website.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">💎</div>
                     <h4>2. Redesign 56 Existing Pages</h4>
-                    <p>Next, we completely redesign your home page, shop, and remaining 56 pages (127 total minus 71 new) into a premium layout.</p>
+                    <p>Next, we completely redesign your home page, shop, and remaining 56 pages (127 total minus 71
+                        new) into a premium layout.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">📈</div>
                     <h4>3. Keyword SEO (127 Pages)</h4>
-                    <p>We find the best ranking keywords and high-search terms and optimize the content for all 127 pages to rank higher on Google.</p>
+                    <p>We find the best ranking keywords and high-search terms and optimize the content for all 127
+                        pages to rank higher on Google.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🛍️</div>
                     <h4>4. Shop & Product Optimization</h4>
-                    <p>Finally, we redesign your shop and product listings for higher conversions, and run final testing across all pages.</p>
+                    <p>Finally, we redesign your shop and product listings for higher conversions, and run final testing
+                        across all pages.</p>
                 </div>
             </div>
 
@@ -1116,10 +1153,20 @@
                 </tbody>
             </table>
 
-            <div class="cost-badge">
-                <div>
-                    <div class="cost-label">Architecture Investment</div>
-                    <div class="cost-amount">₹45,000</div>
+            <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                <div class="cost-badge">
+                    <div>
+                        <div class="cost-label">Architecture Investment</div>
+                        <div class="cost-amount">₹45,000</div>
+                    </div>
+                </div>
+
+                <div class="timeline-badge">
+                    <div class="timeline-icon">⏳</div>
+                    <div>
+                        <div class="timeline-label">Project Turnaround</div>
+                        <div class="timeline-amount">12-13 Days Max</div>
+                    </div>
                 </div>
             </div>
         </div>
